@@ -1,0 +1,36 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-yaml
+        args:
+          - --unsafe
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md
+      - id: mixed-line-ending
+        args:
+          - --fix=lf
+-   repo: local
+    hooks:
+    -   id: pylint
+        name: pylint
+        language: system
+        entry: pylint
+        args:
+        - --max-line-length=120
+        - --errors-only
+        - --ignore-patterns=.*\.md, .*\.txt,.*\.yaml
+    hooks:
+    -   id: unittest
+        name: unittest
+        entry: python -m unittest discover
+        language: python
+        'types': [python]
+        additional_dependencies: []
+        pass_filenames: false

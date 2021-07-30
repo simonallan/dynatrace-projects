@@ -1,4 +1,4 @@
-# Dynatrace ActiveGate AWS CDK Project
+# Welcome to the Dynatrace Transit VPC Service AWS CDK Project
 
 This application has been written with [AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/home.html). After cloning the repo the project will need a few configuration steps before it is usable.
 
